@@ -8,30 +8,30 @@ import pl.upsanok.iolab7.UserDto;
 
 class ParticipantsServiceTest {
 
-  private ParticipantsService participantsService;
+    private ParticipantsService participantsService;
 
-  @BeforeEach
-  public void setUp() {
-    List<String> participants = List.of("Jan", "Kuba", "Marek", "Ania", "Beata", "Cecylia");
-    participantsService = new ParticipantsService(participants);
-  }
-  @Test
-  public void shouldCorrectlyMapAllParticipants() {
-    //given
-    List<UserDto> expectedParticipants = List.of(
-        new UserDto("Jan"),
-        new UserDto("Kuba"),
-        new UserDto("Marek"),
-        new UserDto("Ania"),
-        new UserDto("Beata"),
-        new UserDto("Cecylia")
-    );
+    @BeforeEach
+    public void setUp() {
+        List<String> participants = List.of("Jan", "Kuba", "Marek", "Ania", "Beata", "Cecylia");
+        participantsService = new ParticipantsService(participants);
+    }
 
-    //when
-    List<UserDto> participants = participantsService.getParticipants();
+    @Test
+    public void shouldCorrectlyMapAllParticipants() {
+        //given
+        List<UserDto> expectedParticipants = List.of(
+                new UserDto("Jan"),
+                new UserDto("Kuba"),
+                new UserDto("Marek"),
+                new UserDto("Ania"),
+                new UserDto("Beata"),
+                new UserDto("Cecylia")
+        );
 
-    //then
-    Assertions.assertEquals(expectedParticipants, participants);
-  }
+        //when
+        List<UserDto> participants = participantsService.getParticipants();
 
+        //then
+        Assertions.assertEquals(expectedParticipants, participants);
+    }
 }

@@ -1,24 +1,23 @@
 package pl.upsanok.iolab7.service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import pl.upsanok.iolab7.UserDto;
 
 public class ParticipantsService {
-  private List<String> participants;
+    private final List<String> participants;
 
-  public ParticipantsService(List<String> participants) {
-    this.participants = participants;
-  }
-
-  public List<UserDto> getParticipants() {
-    List<UserDto> goodPeople = new ArrayList<>();
-    for (int i = 0; i < participants.size(); i++) {
-      String participant = participants.get(0);
-      UserDto userDto = new UserDto(participant);
-      goodPeople.add(userDto);
+    public ParticipantsService(List<String> participants) {
+        this.participants = participants;
     }
 
-    return goodPeople;
-  }
+    public List<UserDto> getParticipants() {
+        List<UserDto> goodPeople = participants.stream()
+                .map(name -> new UserDto(name))
+                .collect(Collectors.toList());
+
+        return goodPeople;
+    }
 }
+
+
