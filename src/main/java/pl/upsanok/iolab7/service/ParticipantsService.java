@@ -1,9 +1,8 @@
 package pl.upsanok.iolab7.service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 import pl.upsanok.iolab7.UserDto;
+
+import java.util.List;
 
 public class ParticipantsService {
     private List<String> participants;
