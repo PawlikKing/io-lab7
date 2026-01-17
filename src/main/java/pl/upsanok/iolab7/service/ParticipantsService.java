@@ -12,12 +12,8 @@ public class ParticipantsService {
   }
 
   public List<UserDto> getParticipants() {
-    List<UserDto> goodPeople = new ArrayList<>();
-    for (int i = 0; i < participants.size(); i++) {
-      String participant = participants.get(i);
-      UserDto userDto = new UserDto(participant);
-      goodPeople.add(userDto);
-    }
-    return goodPeople;
+    return participants.stream()
+                        .map(UserDto::new)
+                        .toList();
   }
 }
