@@ -4,6 +4,7 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import pl.upsanok.iolab7.UserDto;
 
 class ParticipantsServiceTest {
@@ -18,7 +19,7 @@ class ParticipantsServiceTest {
   @Test
   public void shouldCorrectlyMapAllParticipants() {
     //given
-    List<UserDto> expectedParticipants = List.of(
+      List<UserDto> expectedParticipants = List.of(
         new UserDto("Jan"),
         new UserDto("Kuba"),
         new UserDto("Marek"),
